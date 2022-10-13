@@ -1,0 +1,31 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.menu-contenido {
+
+    background-image: url(/build/img/cafe.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    aspect-ratio: 3 / 6;
+    background-size: 100%;
+
+    @include m.telefono { 
+        aspect-ratio: 3 / 4;
+    }
+
+
+    @include m.tablet { 
+        @include m.grid(2, v.$separacion);
+
+        aspect-ratio: 16 / 6;
+        background-position: right bottom;
+        background-size: 40%;
+    }
+
+    .texto {
+        p {
+        font-size: 2rem;
+        }
+        
+    }
+}
